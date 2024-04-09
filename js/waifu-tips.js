@@ -4,10 +4,12 @@
  */
 !(function () {
   "use strict";
+
   function e(e) {
     return Array.isArray(e) ? e[Math.floor(Math.random() * e.length)] : e;
   }
   let t;
+
   function o(o, s, i) {
     if (
       !o ||
@@ -20,7 +22,7 @@
       sessionStorage.setItem("waifu-text", i);
     const n = document.getElementById("waifu-tips");
     (n.innerHTML = o),
-      n.classList.add("waifu-tips-active"),
+    n.classList.add("waifu-tips-active"),
       (t = setTimeout(() => {
         sessionStorage.removeItem("waifu-text"),
           n.classList.remove("waifu-tips-active");
@@ -28,9 +30,12 @@
   }
   class s {
     constructor(e) {
-      let { apiPath: t, cdnPath: o } = e,
-        s = !1;
-      if ("string" == typeof o) (s = !0), o.endsWith("/") || (o += "/");
+      let {
+        apiPath: t,
+        cdnPath: o
+      } = e,
+      s = !1;
+      if ("string" == typeof o)(s = !0), o.endsWith("/") || (o += "/");
       else {
         if ("string" != typeof t) throw "Invalid initWidget argument!";
         t.endsWith("/") || (t += "/");
@@ -45,16 +50,16 @@
     async loadModel(e, t, s) {
       if (
         (localStorage.setItem("modelId", e),
-        localStorage.setItem("modelTexturesId", t),
-        o(s, 4e3, 10),
-        this.useCDN)
+          localStorage.setItem("modelTexturesId", t),
+          o(s, 4e3, 10),
+          this.useCDN)
       ) {
         this.modelList || (await this.loadModelList());
         const o = this.modelList.models[e][t];
         loadlive2d("live2d", `${this.cdnPath}model/${o}/index.json`);
       } else
         loadlive2d("live2d", `${this.apiPath}get/?id=${e}-${t}`),
-          console.log(`Live2D 模型 ${e}-${t} 加载完成`);
+        console.log(`Live2D 模型 ${e}-${t} 加载完成`);
     }
     async loadRandModel() {
       const e = localStorage.getItem("modelId");
@@ -65,16 +70,16 @@
         const s = this.modelList.models[e][t];
         localStorage.setItem("modelTexturesId", t),
           this.modelList.models[e].length &&
-            loadlive2d("live2d", `${this.cdnPath}model/${s}/index.json`),
+          loadlive2d("live2d", `${this.cdnPath}model/${s}/index.json`),
           o("我的新衣服好看嘛？", 4e3, 10);
       } else
         fetch(`${this.apiPath}rand_textures/?id=${e}-${t}`)
-          .then((e) => e.json())
-          .then((s) => {
-            1 !== s.textures.id || (1 !== t && 0 !== t)
-              ? this.loadModel(e, s.textures.id, "我的新衣服好看嘛？")
-              : o("我还没有其他衣服呢！", 4e3, 10);
-          });
+        .then((e) => e.json())
+        .then((s) => {
+          1 !== s.textures.id || (1 !== t && 0 !== t) ?
+            this.loadModel(e, s.textures.id, "我的新衣服好看嘛？") :
+            o("我还没有其他衣服呢！", 4e3, 10);
+        });
     }
     async loadOtherModel() {
       let e = localStorage.getItem("modelId");
@@ -84,10 +89,10 @@
         this.loadModel(t, 0, this.modelList.messages[t]);
       } else
         fetch(`${this.apiPath}switch/?id=${e}`)
-          .then((e) => e.json())
-          .then((e) => {
-            this.loadModel(e.model.id, 0, e.model.message);
-          });
+        .then((e) => e.json())
+        .then((e) => {
+          this.loadModel(e.model.id, 0, e.model.message);
+        });
     }
     // 随机切换模型材质
     // async loadOtherModel() {
@@ -155,12 +160,12 @@
       callback: () => {
         if (window.Asteroids)
           window.ASTEROIDSPLAYERS || (window.ASTEROIDSPLAYERS = []),
-            window.ASTEROIDSPLAYERS.push(new Asteroids());
+          window.ASTEROIDSPLAYERS.push(new Asteroids());
         else {
           const e = document.createElement("script");
           (e.src =
-            "https://jsd.onmicrosoft.cn/gh/adingapkgg/live2d-api@main/js/asteroids.js"),
-            document.head.appendChild(e);
+            "https://registry.npmmirror.com/weblive2d-api/latest/files/js/asteroids.js"),
+          document.head.appendChild(e);
         }
       },
     },
@@ -194,15 +199,17 @@
           (document.getElementById("waifu").style.bottom = "-500px"),
           setTimeout(() => {
             (document.getElementById("waifu").style.display = "none"),
-              document
-                .getElementById("waifu-toggle")
-                .classList.add("waifu-toggle-active");
+            document
+              .getElementById("waifu-toggle")
+              .classList.add("waifu-toggle-active");
           }, 3e3);
       },
     },
   };
+
   function n(t) {
     const n = new s(t);
+
     function c(t) {
       let s,
         i,
@@ -212,16 +219,20 @@
         window.addEventListener("keydown", () => (n = !0)),
         setInterval(() => {
           n
-            ? ((n = !1), clearInterval(s), (s = null))
-            : s ||
-              (s = setInterval(() => {
-                o(c, 6e3, 9);
-              }, 2e4));
+            ?
+            ((n = !1), clearInterval(s), (s = null)) :
+            s ||
+            (s = setInterval(() => {
+              o(c, 6e3, 9);
+            }, 2e4));
         }, 1e3),
         o(
           (function (e) {
             if ("/" === location.pathname)
-              for (let { hour: t, text: o } of e) {
+              for (let {
+                  hour: t,
+                  text: o
+                } of e) {
                 const e = new Date(),
                   s = t.split("-")[0],
                   i = t.split("-")[1] || s;
@@ -234,10 +245,14 @@
             if ("" !== document.referrer) {
               const e = new URL(document.referrer),
                 s = e.hostname.split(".")[1],
-                i = { baidu: "百度", so: "360搜索", google: "谷歌搜索" };
-              return location.hostname === e.hostname
-                ? t
-                : ((o = s in i ? i[s] : e.hostname),
+                i = {
+                  baidu: "百度",
+                  so: "360搜索",
+                  google: "谷歌搜索"
+                };
+              return location.hostname === e.hostname ?
+                t :
+                ((o = s in i ? i[s] : e.hostname),
                   `Hello！来自 <span>${o}</span> 的朋友<br>${t}`);
             }
             return t;
@@ -246,7 +261,10 @@
           11
         ),
         window.addEventListener("mouseover", (s) => {
-          for (let { selector: n, text: c } of t.mouseover)
+          for (let {
+              selector: n,
+              text: c
+            } of t.mouseover)
             if (s.target.closest(n)) {
               if (i === n) return;
               return (
@@ -258,7 +276,10 @@
             }
         }),
         window.addEventListener("click", (s) => {
-          for (let { selector: i, text: n } of t.click)
+          for (let {
+              selector: i,
+              text: n
+            } of t.click)
             if (s.target.closest(i))
               return (
                 (n = e(n)),
@@ -266,7 +287,10 @@
                 void o(n, 4e3, 8)
               );
         }),
-        t.seasons.forEach(({ date: t, text: o }) => {
+        t.seasons.forEach(({
+          date: t,
+          text: o
+        }) => {
           const s = new Date(),
             i = t.split("-")[0],
             n = t.split("-")[1] || i;
@@ -299,11 +323,14 @@
       }, 0),
       (function () {
         (i["switch-model"].callback = () => n.loadOtherModel()),
-          (i["switch-texture"].callback = () => n.loadRandModel()),
-          Array.isArray(t.tools) || (t.tools = Object.keys(i));
+        (i["switch-texture"].callback = () => n.loadRandModel()),
+        Array.isArray(t.tools) || (t.tools = Object.keys(i));
         for (let e of t.tools)
           if (i[e]) {
-            const { icon: t, callback: o } = i[e];
+            const {
+              icon: t,
+              callback: o
+            } = i[e];
             document
               .getElementById("waifu-tool")
               .insertAdjacentHTML(
@@ -311,8 +338,8 @@
                 `<span id="waifu-tool-${e}">${t}</span>`
               ),
               document
-                .getElementById(`waifu-tool-${e}`)
-                .addEventListener("click", o);
+              .getElementById(`waifu-tool-${e}`)
+              .addEventListener("click", o);
           }
       })(),
       (function () {
@@ -321,33 +348,36 @@
         null === e && ((e = 0), (o = 0)),
           n.loadModel(e, o),
           fetch(t.waifuPath)
-            .then((e) => e.json())
-            .then(c);
+          .then((e) => e.json())
+          .then(c);
       })();
   }
   window.initWidget = function (e, t) {
-    "string" == typeof e && (e = { waifuPath: e, apiPath: t }),
+    "string" == typeof e && (e = {
+        waifuPath: e,
+        apiPath: t
+      }),
       document.body.insertAdjacentHTML(
         "beforeend",
         '<div id="waifu-toggle">\n            <span>看板娘</span>\n        </div>'
       );
     const o = document.getElementById("waifu-toggle");
     o.addEventListener("click", () => {
-      o.classList.remove("waifu-toggle-active"),
-        o.getAttribute("first-time")
-          ? (n(e), o.removeAttribute("first-time"))
-          : (localStorage.removeItem("waifu-display"),
+        o.classList.remove("waifu-toggle-active"),
+          o.getAttribute("first-time") ?
+          (n(e), o.removeAttribute("first-time")) :
+          (localStorage.removeItem("waifu-display"),
             (document.getElementById("waifu").style.display = ""),
             setTimeout(() => {
               document.getElementById("waifu").style.bottom = 0;
             }, 0));
-    }),
+      }),
       localStorage.getItem("waifu-display") &&
-      Date.now() - localStorage.getItem("waifu-display") <= 864e5
-        ? (o.setAttribute("first-time", !0),
-          setTimeout(() => {
-            o.classList.add("waifu-toggle-active");
-          }, 0))
-        : n(e);
+      Date.now() - localStorage.getItem("waifu-display") <= 864e5 ?
+      (o.setAttribute("first-time", !0),
+        setTimeout(() => {
+          o.classList.add("waifu-toggle-active");
+        }, 0)) :
+      n(e);
   };
 })();

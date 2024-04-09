@@ -247,7 +247,8 @@ function Asteroids() {
     }
     const all = document.body.getElementsByTagName("*");
     that.enemies = [];
-    for (let i = 0, el; (el = all[i]); i++) {
+    for (let i = 0, el;
+      (el = all[i]); i++) {
       if (
         !ignoredTypes.includes(el.tagName.toUpperCase()) &&
         el.prefix !== "g_vml_" &&
@@ -276,8 +277,12 @@ function Asteroids() {
       halfY = yWidth / 2,
       halfPlayerHeight = playerHeight / 2;
     createFlames = function () {
-      that.flame.r = [[-1 * halfPlayerHeight, -1 * halfR]];
-      that.flame.y = [[-1 * halfPlayerHeight, -1 * halfY]];
+      that.flame.r = [
+        [-1 * halfPlayerHeight, -1 * halfR]
+      ];
+      that.flame.y = [
+        [-1 * halfPlayerHeight, -1 * halfY]
+      ];
       for (let x = 0; x < rWidth; x += rIncrease) {
         that.flame.r.push([-random(2, 7) - halfPlayerHeight, x - halfR]);
       }
@@ -628,6 +633,7 @@ function Asteroids() {
   addParticles(this.pos);
   document.body.classList.add("ASTEROIDSYEAH");
   let lastUpdate = new Date().getTime();
+
   function updateFunc() {
     that.update.call(that);
   }
