@@ -13,9 +13,9 @@
    ```html
    <link
      rel="stylesheet"
-     href="https://cdn.jsdelivr.net/npm/weblive2d@latest/waifu.css"
+     href="https://cdn.jsdelivr.net/npm/weblive2d/waifu.css"
    />
-   <script src="https://cdn.jsdelivr.net/npm/weblive2d@latest/js/autoload.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/weblive2d/js/autoload.js"></script>
    ```
 
 2. 使用其他 `CDN` 节点引入。

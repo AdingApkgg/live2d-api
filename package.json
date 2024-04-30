@@ -1,23 +1,24 @@
 {
   "name": "weblive2d",
   "version": "1.0.0",
-  "description": "- 本项目`Fork`自 [nova1751/live2d-api](https://github.com/nova1751/live2d-api)。\r - 本项目 API 搭建方式参考自 [fghrsh/live2d_api](https://github.com/fghrsh/live2d_api)。\r - 本项目代码参考自 [stevenjoezhang/live2d-widget](https://github.com/stevenjoezhang/live2d-widget)。\r - 本项目模型来自 [Eikanya/Live2d-model](https://github.com/Eikanya/Live2d-model)，仅供学习交流，请勿用于商业用途，如有侵权，请联系删除。",
+  "description": "1. 将 `Live2D` 完全 `cdn` 化，目录结构简单，便于编辑、添加和删除模型。\r 2. 为以 `CDN` 方式加载的 `Live2D` 模型，添加模型皮肤顺序切换的功能。\r 3. 将项目配置文件拆分成 `<link>` 与 `<script>` 标签的形式便于网站引入。",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "web",
-    "live2d",
-    "api",
-    "model"
-  ],
-  "author": "adingapkgg",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AdingApkgg/live2d-api.git"
   },
+  "keywords": [
+    "live2d",
+    "api",
+    "model",
+    "web",
+    "widget"
+  ],
+  "author": "adingapkgg",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/AdingApkgg/live2d-api/issues"
   },
