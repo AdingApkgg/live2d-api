@@ -43,8 +43,12 @@
       "asuna/asuna_44",
       "asuna/asuna_45"
     ],
-    "bilibili-live/22",
-    "bilibili-live/33",
+    [
+      "bilibili-live/22"
+    ],
+    [
+      "bilibili-live/33"
+    ],
     [
       "ShizukuTalk/shizuku-48",
       "ShizukuTalk/shizuku-pajama"
@@ -71,9 +75,15 @@
       "HyperdimensionNeptunia/histoire",
       "HyperdimensionNeptunia/histoirenohover"
     ],
-    "KantaiCollection/shizuku-48",
-    "sagiri",
-    "katou_01"
+    [
+      "KantaiCollection/shizuku-48"
+    ],
+    [
+      "sagiri"
+    ],
+    [
+      "katou_01"
+    ]
   ],
   "messages": [
     "刀剑神域 SAO 亚丝娜 Asuna",
