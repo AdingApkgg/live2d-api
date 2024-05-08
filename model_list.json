@@ -41,7 +41,8 @@
       "asuna/asuna_41",
       "asuna/asuna_43",
       "asuna/asuna_44",
-      "asuna/asuna_45"
+      "asuna/asuna_45",
+      "asuna/asuna_46"
     ],
     [
       "bilibili-live/22"
@@ -74,6 +75,42 @@
       "HyperdimensionNeptunia/nepgearswim",
       "HyperdimensionNeptunia/histoire",
       "HyperdimensionNeptunia/histoirenohover"
+    ],
+    [
+      "AK12/ak12_0/normal",
+      "AK12/ak12_0/destroy",
+      "AK12/ak12_2402/normal",
+      "AK12/ak12_2402/destroy"
+    ],
+    [
+      "HK416/HK416_805/normal",
+      "HK416/HK416_805/destroy",
+      "HK416/HK416_3401/normal",
+      "HK416/HK416_3401/destroy"
+    ],
+    [
+      "ost14/ots14_1203/normal",
+      "ost14/ots14_1203/destroy",
+      "ost14/ots14_3001/normal",
+      "ost14/ots14_3001/destroy",
+      "ost14/ots14_4501/normal",
+      "ost14/ots14_4501/destroy"
+    ],
+    [
+      "95type/95type_405/normal",
+      "95type/95type_405/destroy",
+      "95type/95type_3702/normal",
+      "95type/95type_3702/destroy"
+    ],
+    [
+      "dsr50/dsr50_1801/normal",
+      "dsr50/dsr50_1801/destroy",
+      "dsr50/dsr50_2101/normal",
+      "dsr50/dsr50_2101/destroy"
+    ],
+    [
+      "ro635_4504/normal",
+      "ro635_4504/destroy"
     ]
   ],
   "messages": [
@@ -81,6 +118,12 @@
     "来自 Bilibili Live 的 22 哦 ~",
     "来自 Bilibili Live 的 33 的说",
     "Shizuku Talk ！这里是 Shizuku ~",
-    "Nep! Nep! 超次元游戏：海王星 系列"
+    "Nep! Nep! 超次元游戏：海王星 系列",
+    "少女前线 Girls Frontline~ AK12",
+    "少女前线 Girls Frontline~ HK416_805",
+    "少女前线 Girls Frontline~ ots14",
+    "少女前线 Girls Frontline~ 95type",
+    "少女前线 Girls Frontline~ DSR50",
+    "少女前线 Girls Frontline~ ro635_4504"
   ]
 }
