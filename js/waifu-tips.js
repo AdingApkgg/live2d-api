@@ -22,7 +22,7 @@
       sessionStorage.setItem("waifu-text", i);
     const n = document.getElementById("waifu-tips");
     (n.innerHTML = o),
-    n.classList.add("waifu-tips-active"),
+      n.classList.add("waifu-tips-active"),
       (t = setTimeout(() => {
         sessionStorage.removeItem("waifu-text"),
           n.classList.remove("waifu-tips-active");
@@ -34,8 +34,8 @@
         apiPath: t,
         cdnPath: o
       } = e,
-      s = !1;
-      if ("string" == typeof o)(s = !0), o.endsWith("/") || (o += "/");
+        s = !1;
+      if ("string" == typeof o) (s = !0), o.endsWith("/") || (o += "/");
       else {
         if ("string" != typeof t) throw "Invalid initWidget argument!";
         t.endsWith("/") || (t += "/");
@@ -59,7 +59,7 @@
         loadlive2d("live2d", `${this.cdnPath}model/${o}/index.json`);
       } else
         loadlive2d("live2d", `${this.apiPath}get/?id=${e}-${t}`),
-        console.log(`Live2D 模型 ${e}-${t} 加载完成`);
+          console.log(`Live2D 模型 ${e}-${t} 加载完成`);
     }
     async loadRandModel() {
       const e = localStorage.getItem("modelId");
@@ -74,12 +74,12 @@
           o("我的新衣服好看嘛？", 4e3, 10);
       } else
         fetch(`${this.apiPath}rand_textures/?id=${e}-${t}`)
-        .then((e) => e.json())
-        .then((s) => {
-          1 !== s.textures.id || (1 !== t && 0 !== t) ?
-            this.loadModel(e, s.textures.id, "我的新衣服好看嘛？") :
-            o("我还没有其他衣服呢！", 4e3, 10);
-        });
+          .then((e) => e.json())
+          .then((s) => {
+            1 !== s.textures.id || (1 !== t && 0 !== t) ?
+              this.loadModel(e, s.textures.id, "我的新衣服好看嘛？") :
+              o("我还没有其他衣服呢！", 4e3, 10);
+          });
     }
     async loadOtherModel() {
       let e = localStorage.getItem("modelId");
@@ -89,10 +89,10 @@
         this.loadModel(t, 0, this.modelList.messages[t]);
       } else
         fetch(`${this.apiPath}switch/?id=${e}`)
-        .then((e) => e.json())
-        .then((e) => {
-          this.loadModel(e.model.id, 0, e.model.message);
-        });
+          .then((e) => e.json())
+          .then((e) => {
+            this.loadModel(e.model.id, 0, e.model.message);
+          });
     }
     // 随机切换模型材质
     // async loadOtherModel() {
@@ -160,22 +160,22 @@
       callback: () => {
         if (window.Asteroids)
           window.ASTEROIDSPLAYERS || (window.ASTEROIDSPLAYERS = []),
-          window.ASTEROIDSPLAYERS.push(new Asteroids());
+            window.ASTEROIDSPLAYERS.push(new Asteroids());
         else {
           const e = document.createElement("script");
           (e.src =
-            "https://registry.npmmirror.com/weblive2d-api/latest/files/js/asteroids.js"),
-          document.head.appendChild(e);
+            "https://registry.npmmirror.com/weblive2d/latest/files/js/asteroids.js"),
+            document.head.appendChild(e);
         }
       },
     },
     "switch-model": {
       icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"/></svg>',
-      callback: () => {},
+      callback: () => { },
     },
     "switch-texture": {
       icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M320 64A64 64 0 1 0 192 64a64 64 0 1 0 128 0zm-96 96c-35.3 0-64 28.7-64 64v48c0 17.7 14.3 32 32 32h1.8l11.1 99.5c1.8 16.2 15.5 28.5 31.8 28.5h38.7c16.3 0 30-12.3 31.8-28.5L318.2 304H320c17.7 0 32-14.3 32-32V224c0-35.3-28.7-64-64-64H224zM132.3 394.2c13-2.4 21.7-14.9 19.3-27.9s-14.9-21.7-27.9-19.3c-32.4 5.9-60.9 14.2-82 24.8c-10.5 5.3-20.3 11.7-27.8 19.6C6.4 399.5 0 410.5 0 424c0 21.4 15.5 36.1 29.1 45c14.7 9.6 34.3 17.3 56.4 23.4C130.2 504.7 190.4 512 256 512s125.8-7.3 170.4-19.6c22.1-6.1 41.8-13.8 56.4-23.4c13.7-8.9 29.1-23.6 29.1-45c0-13.5-6.4-24.5-14-32.6c-7.5-7.9-17.3-14.3-27.8-19.6c-21-10.6-49.5-18.9-82-24.8c-13-2.4-25.5 6.3-27.9 19.3s6.3 25.5 19.3 27.9c30.2 5.5 53.7 12.8 69 20.5c3.2 1.6 5.8 3.1 7.9 4.5c3.6 2.4 3.6 7.2 0 9.6c-8.8 5.7-23.1 11.8-43 17.3C374.3 457 318.5 464 256 464s-118.3-7-157.7-17.9c-19.9-5.5-34.2-11.6-43-17.3c-3.6-2.4-3.6-7.2 0-9.6c2.1-1.4 4.8-2.9 7.9-4.5c15.3-7.7 38.8-14.9 69-20.5z"/></svg>',
-      callback: () => {},
+      callback: () => { },
     },
     photo: {
       icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M220.6 121.2L271.1 96 448 96v96H333.2c-21.9-15.1-48.5-24-77.2-24s-55.2 8.9-77.2 24H64V128H192c9.9 0 19.7-2.3 28.6-6.8zM0 128V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H271.1c-9.9 0-19.7 2.3-28.6 6.8L192 64H160V48c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16l0 16C28.7 64 0 92.7 0 128zM168 304a88 88 0 1 1 176 0 88 88 0 1 1 -176 0z"/></svg>',
@@ -199,9 +199,9 @@
           (document.getElementById("waifu").style.bottom = "-500px"),
           setTimeout(() => {
             (document.getElementById("waifu").style.display = "none"),
-            document
-              .getElementById("waifu-toggle")
-              .classList.add("waifu-toggle-active");
+              document
+                .getElementById("waifu-toggle")
+                .classList.add("waifu-toggle-active");
           }, 3e3);
       },
     },
@@ -230,17 +230,16 @@
           (function (e) {
             if ("/" === location.pathname)
               for (let {
-                  hour: t,
-                  text: o
-                } of e) {
+                hour: t,
+                text: o
+              } of e) {
                 const e = new Date(),
                   s = t.split("-")[0],
                   i = t.split("-")[1] || s;
                 if (s <= e.getHours() && e.getHours() <= i) return o;
               }
-            const t = `欢迎阅读<span>「${
-              document.title.split(" - ")[0]
-            }」</span>`;
+            const t = `欢迎阅读<span>「${document.title.split(" - ")[0]
+              }」</span>`;
             let o;
             if ("" !== document.referrer) {
               const e = new URL(document.referrer),
@@ -262,9 +261,9 @@
         ),
         window.addEventListener("mouseover", (s) => {
           for (let {
-              selector: n,
-              text: c
-            } of t.mouseover)
+            selector: n,
+            text: c
+          } of t.mouseover)
             if (s.target.closest(n)) {
               if (i === n) return;
               return (
@@ -277,9 +276,9 @@
         }),
         window.addEventListener("click", (s) => {
           for (let {
-              selector: i,
-              text: n
-            } of t.click)
+            selector: i,
+            text: n
+          } of t.click)
             if (s.target.closest(i))
               return (
                 (n = e(n)),
@@ -300,7 +299,7 @@
             s.getDate() <= n.split("/")[1] &&
             ((o = (o = e(o)).replace("{year}", s.getFullYear())), c.push(o));
         });
-      const a = () => {};
+      const a = () => { };
       console.log("%c", a),
         (a.toString = () => {
           o(t.message.console, 6e3, 9);
@@ -323,8 +322,8 @@
       }, 0),
       (function () {
         (i["switch-model"].callback = () => n.loadOtherModel()),
-        (i["switch-texture"].callback = () => n.loadRandModel()),
-        Array.isArray(t.tools) || (t.tools = Object.keys(i));
+          (i["switch-texture"].callback = () => n.loadRandModel()),
+          Array.isArray(t.tools) || (t.tools = Object.keys(i));
         for (let e of t.tools)
           if (i[e]) {
             const {
@@ -338,8 +337,8 @@
                 `<span id="waifu-tool-${e}">${t}</span>`
               ),
               document
-              .getElementById(`waifu-tool-${e}`)
-              .addEventListener("click", o);
+                .getElementById(`waifu-tool-${e}`)
+                .addEventListener("click", o);
           }
       })(),
       (function () {
@@ -348,36 +347,36 @@
         null === e && ((e = 0), (o = 0)),
           n.loadModel(e, o),
           fetch(t.waifuPath)
-          .then((e) => e.json())
-          .then(c);
+            .then((e) => e.json())
+            .then(c);
       })();
   }
   window.initWidget = function (e, t) {
     "string" == typeof e && (e = {
-        waifuPath: e,
-        apiPath: t
-      }),
+      waifuPath: e,
+      apiPath: t
+    }),
       document.body.insertAdjacentHTML(
         "beforeend",
         '<div id="waifu-toggle">\n            <span>看板娘</span>\n        </div>'
       );
     const o = document.getElementById("waifu-toggle");
     o.addEventListener("click", () => {
-        o.classList.remove("waifu-toggle-active"),
-          o.getAttribute("first-time") ?
+      o.classList.remove("waifu-toggle-active"),
+        o.getAttribute("first-time") ?
           (n(e), o.removeAttribute("first-time")) :
           (localStorage.removeItem("waifu-display"),
             (document.getElementById("waifu").style.display = ""),
             setTimeout(() => {
               document.getElementById("waifu").style.bottom = 0;
             }, 0));
-      }),
+    }),
       localStorage.getItem("waifu-display") &&
-      Date.now() - localStorage.getItem("waifu-display") <= 864e5 ?
-      (o.setAttribute("first-time", !0),
-        setTimeout(() => {
-          o.classList.add("waifu-toggle-active");
-        }, 0)) :
-      n(e);
+        Date.now() - localStorage.getItem("waifu-display") <= 864e5 ?
+        (o.setAttribute("first-time", !0),
+          setTimeout(() => {
+            o.classList.add("waifu-toggle-active");
+          }, 0)) :
+        n(e);
   };
 })();

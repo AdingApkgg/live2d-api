@@ -433,7 +433,7 @@ function Asteroids() {
       setTimeout(function () {
         try {
           message.parentNode.removeChild(message);
-        } catch (e) {}
+        } catch (e) { }
       }, 1000);
     },
     false
@@ -746,7 +746,7 @@ function Asteroids() {
         try {
           if (this.dying[i].parentNode) window.ASTEROIDS.enemiesKilled++;
           this.dying[i].parentNode.removeChild(this.dying[i]);
-        } catch (e) {}
+        } catch (e) { }
       }
       setScore();
       this.dying = [];
